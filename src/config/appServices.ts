@@ -17,7 +17,7 @@ let cachedEventGridPublisher: EventPublisher | undefined;
 export const getAvailabilityRepo = (): AvailabilityRepo => {
   if (!cachedAvailabilityRepo) {
     const endpoint = process.env.COSMOS_ENDPOINT || '';
-    const databaseId = process.env.COSMOS_DATABASE_ID || 'availability-db';
+    const databaseId = process.env.COSMOS_AVAILABILITY_DATABASE_ID || 'availability-db';
     const containerId = process.env.COSMOS_AVAILABILITY_CONTAINER_ID || 'availability';
     const key = process.env.COSMOS_KEY;
 
@@ -41,7 +41,7 @@ export const getAvailabilityRepo = (): AvailabilityRepo => {
 export const getOutboxRepo = (): OutboxRepo => {
   if (!cachedOutboxRepo) {
     const endpoint = process.env.COSMOS_ENDPOINT || '';
-    const databaseId = process.env.COSMOS_DATABASE_ID || 'availability-db';
+    const databaseId = process.env.COSMOS_AVAILABILITY_DATABASE_ID || 'availability-db';
     const containerId = process.env.COSMOS_OUTBOX_CONTAINER_ID || 'outbox';
     const key = process.env.COSMOS_KEY;
 
